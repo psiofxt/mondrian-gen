@@ -18,5 +18,9 @@ brew install ghostscript
 
 ## Examples
 [image_one]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example1.jpg "Image One"
+[image_two]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example2.jpg "Image Two"
+[image_three]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example3.jpg "Image Three"
 
 ![alt text][image_one]
+![alt text][image_two]
+![alt text][image_three]
