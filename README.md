@@ -17,6 +17,6 @@ brew install ghostscript
 ```
 
 ## Examples
-[image_one]: https://github.com/psiofxt/mondrian-gen/tree/master/img/example1.jpg "Image One"
+[image_one]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example1.jpg "Image One"
 
 ![alt text][image_one]
