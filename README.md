@@ -4,6 +4,10 @@ of Mondrian's abstract art.
 
 Images are saved using Ghostscript to the /img folder.
 
+After a new image is generated and saved, the structural similarity of this image
+compared to a pool of "base" Mondrian images is calculated in color and in grayscale.
+The average ssim value for color and gray is displayed at the top of the window.
+
 ## Installation
 Python 3.6 is required.
 
