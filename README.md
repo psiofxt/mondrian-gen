@@ -15,6 +15,10 @@ Mac:
 ```
 brew install ghostscript
 ```
+Install the image processing requirements:
+```
+pip install -r requirements.txt
+```
 Finally, to run the abstract goodness:
 ```
 python mondrian.py
