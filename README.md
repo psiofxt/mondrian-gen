@@ -15,6 +15,10 @@ Mac:
 ```
 brew install ghostscript
 ```
+Finally, to run the abstract goodness:
+```
+python mondrian.py
+```
 
 ## Examples
 [image_one]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example1.jpg "Image One"

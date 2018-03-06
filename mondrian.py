@@ -19,6 +19,10 @@ def create_sub_rectangle(initial_rectangle, rectangles):
     Opposite (remaining whitespace) rectangles are calculated to ensure
     a minimum amount of 'white space' within the canvas.
 
+    Each rectangle's color and edge thickness is chosen from a weighted
+    distribution of colors and thickness. Color 'white' is the most probable
+    at 50%.
+
     param: initial_rectangle: the rectangle to recruse on, Rectangle(Object)
     param: rectangles: the running list of rectangles, list
     """
@@ -79,6 +83,9 @@ def draw():
 
 
 def save():
+    """
+    Saves the canvas as a jpg in /img
+    """
     ps = canvas.postscript(colormode='color')
     img = Image.open(io.BytesIO(ps.encode('utf-8')))
     img.save('img/test.jpg')
