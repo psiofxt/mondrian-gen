@@ -28,7 +28,9 @@ python mondrian.py
 [image_one]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example1.jpg "Image One"
 [image_two]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example2.jpg "Image Two"
 [image_three]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example3.jpg "Image Three"
+[image_four]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/ssim_example.png "Image Four"
 
 ![alt text][image_one]
 ![alt text][image_two]
 ![alt text][image_three]
+![alt text][image_four]
