@@ -9,6 +9,7 @@ import io
 
 # local
 from rectangle import Rectangle
+from similarities import calculate_structural_sim
 
 
 def create_sub_rectangle(initial_rectangle, rectangles):
@@ -77,24 +78,32 @@ def draw():
     print (rectangles)
     for rectangle in rectangles:
         if rectangle.calculate_area() > 150000:
-            print (rectangle.calculate_area())
             rectangles.remove(rectangle)
             create_sub_rectangle(rectangle, rectangles)
 
 
 def save():
     """
-    Saves the canvas as a jpg in /img
+    Saves the canvas as a jpg in /img and calculate the structural similarity
+    average of the base mondrian images. Structural Sim is displayed at the
+    top of the window.
     """
     ps = canvas.postscript(colormode='color')
     img = Image.open(io.BytesIO(ps.encode('utf-8')))
     img.save('img/test.jpg')
 
+    average_color, average_gray = calculate_structural_sim()
+
+    # Update label on the window to reflect averages
+    label['text'] = 'ssim_color:  ' + str(average_color) + '\n' + \
+                    'ssim_gray:  ' + str(average_gray)
 
 if __name__ == '__main__':
     rectangles = []
     main_window = tkinter.Tk()
     main_window.geometry('1280x680')
+    label = tkinter.Label(main_window, text="ssim_color:  \n ssim_gray:  ")
+    label.pack()
     main_window.update()
     canvas = tkinter.Canvas(main_window, width=1200, height=600)
     canvas.configure(background='white')
