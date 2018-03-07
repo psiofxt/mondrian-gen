@@ -33,8 +33,18 @@ python mondrian.py
 [image_two]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example2.jpg "Image Two"
 [image_three]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example3.jpg "Image Three"
 [image_four]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/ssim_example.png "Image Four"
+[image_five]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example4.png "Image Five"
+[image_six]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example5.png "Image Six"
 
 ![alt text][image_one]
+
 ![alt text][image_two]
+
 ![alt text][image_three]
+
+![alt text][image_five]
+
+Increasing volume of squares
+![alt text][image_six]
+
 ![alt text][image_four]
