@@ -10,7 +10,7 @@ class Rectangle():
     """
     counter = 0
 
-    def __init__(self, upper_left_coord, lower_right_coord):
+    def __init__(self, upper_left_coord, lower_right_coord, is_opposite=False):
         if not isinstance(upper_left_coord, tuple) and \
            not isinstance(lower_right_coord, tuple):
            raise Exception("Rectangle arguments must be tuples")
@@ -20,6 +20,7 @@ class Rectangle():
            not isinstance(lower_right_coord[1], int):
            raise Exception("Tuple entries must be integers")
 
+        self.is_opposite = is_opposite
         self.x1 = upper_left_coord[0]
         self.y1 = upper_left_coord[1]
         self.x2 = lower_right_coord[0]

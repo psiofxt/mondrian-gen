@@ -39,11 +39,11 @@ def create_sub_rectangle(initial_rectangle, rectangles):
     new_x3 = random.choice([previous_x3, random.randint(previous_x1, previous_x3)])
     if new_x3 == previous_x3:
         new_y3 = random.randint(previous_y1, previous_y3)
-        opposite = Rectangle((previous_x1, new_y3), (new_x3, previous_y3))
+        opposite = Rectangle((previous_x1, new_y3), (new_x3, previous_y3), is_opposite=True)
         rectangles.append(opposite)
     else:
         new_y3 = previous_y3
-        opposite = Rectangle((new_x3, previous_y1), (previous_x3, new_y3))
+        opposite = Rectangle((new_x3, previous_y1), (previous_x3, new_y3), is_opposite=True)
         rectangles.append(opposite)
 
     rec = canvas.create_rectangle(
@@ -77,7 +77,7 @@ def draw():
     create_sub_rectangle(initial_rectangle, rectangles)
     print (rectangles)
     for rectangle in rectangles:
-        if rectangle.calculate_area() > 150000:
+        if rectangle.calculate_area() > 25000 and rectangle.is_opposite:
             rectangles.remove(rectangle)
             create_sub_rectangle(rectangle, rectangles)
 
