@@ -44,6 +44,8 @@ python mondrian.py
 
 ![alt text][image_one]
 
+![alt text][image_three]
+
 ![alt text][image_two]
 
 ![alt text][image_five]
