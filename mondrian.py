@@ -51,8 +51,8 @@ def create_sub_rectangle(initial_rectangle, rectangles, area_limit=1000):
         previous_y1,
         new_x3,
         new_y3,
-        fill=random.choices(Rectangle.colors, [.5, .1, .1, .05, .1]),
-        width=random.choices([1, 2, 4], [.8, .18, .02])
+        fill=random.choices(Rectangle.colors, [.5, .05, .05, .05, .05]),
+        width=random.choices([9, 5, 3], [.8, .18, .02])
     )
     rectangle = Rectangle((previous_x1, previous_y1), (new_x3, new_y3))
     rectangles.append(rectangle)
@@ -60,7 +60,7 @@ def create_sub_rectangle(initial_rectangle, rectangles, area_limit=1000):
     return create_sub_rectangle(rectangle, rectangles, area_limit=area_limit)
 
 
-def draw(area_limit=2000, opposite_area_limit=2000):
+def draw(area_limit=40000, opposite_area_limit=100):
     """
     Initially clears the canvas of all drawings/objects and generates new
     rectangles to be drawn. An initial rectangle is drawn that encompasses the
