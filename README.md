@@ -28,6 +28,11 @@ Finally, to run the abstract goodness:
 python mondrian.py
 ```
 
+## Changes
+3/6/18 -- added thresholds to ensure no squares overlap
+
+3/7/18 -- added simulation to generate most Mondrian-like image
+
 ## Examples
 [image_one]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example1.jpg "Image One"
 [image_two]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example2.jpg "Image Two"
