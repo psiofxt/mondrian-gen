@@ -35,7 +35,7 @@ python mondrian.py
 [image_four]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/ssim_example.png "Image Four"
 [image_five]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example4.jpg "Image Five"
 [image_six]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example5.jpg "Image Six"
-[image_six]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example6.jpg "Image Seven"
+[image_seven]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example6.jpg "Image Seven"
 
 ![alt text][image_one]
 
