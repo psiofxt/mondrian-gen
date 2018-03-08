@@ -60,7 +60,7 @@ def create_sub_rectangle(initial_rectangle, rectangles, area_limit=1000):
     return create_sub_rectangle(rectangle, rectangles, area_limit=area_limit)
 
 
-def draw(area_limit=300, opposite_area_limit=300):
+def draw(area_limit=2000, opposite_area_limit=2000):
     """
     Initially clears the canvas of all drawings/objects and generates new
     rectangles to be drawn. An initial rectangle is drawn that encompasses the
