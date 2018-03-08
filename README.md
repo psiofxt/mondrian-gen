@@ -35,6 +35,7 @@ python mondrian.py
 [image_four]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/ssim_example.png "Image Four"
 [image_five]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example4.jpg "Image Five"
 [image_six]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example5.jpg "Image Six"
+[image_six]: https://raw.githubusercontent.com/psiofxt/mondrian-gen/master/img/example6.jpg "Image Seven"
 
 ![alt text][image_one]
 
@@ -46,6 +47,8 @@ python mondrian.py
 
 #### Increasing volume of squares
 ![alt text][image_six]
+
+![alt text][image_seven]
 
 #### Displaying ssim index
 ![alt text][image_four]
