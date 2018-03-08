@@ -12,7 +12,7 @@ from rectangle import Rectangle
 from similarities import calculate_structural_sim
 
 
-def create_sub_rectangle(initial_rectangle, rectangles):
+def create_sub_rectangle(initial_rectangle, rectangles, area_limit=1000):
     """
     Recursively creates a series of sub rectangles within the initial rectangle
     passed in. The base case of the recursion is if the rectangle falls below
@@ -27,7 +27,7 @@ def create_sub_rectangle(initial_rectangle, rectangles):
     param: initial_rectangle: the rectangle to recruse on, Rectangle(Object)
     param: rectangles: the running list of rectangles, list
     """
-    if initial_rectangle.calculate_area() < 100:
+    if initial_rectangle.calculate_area() < area_limit:
         return rectangles
 
     previous_x1 = initial_rectangle.x1
@@ -57,9 +57,10 @@ def create_sub_rectangle(initial_rectangle, rectangles):
     rectangle = Rectangle((previous_x1, previous_y1), (new_x3, new_y3))
     rectangles.append(rectangle)
 
-    return create_sub_rectangle(rectangle, rectangles)
+    return create_sub_rectangle(rectangle, rectangles, area_limit=area_limit)
 
-def draw():
+
+def draw(area_limit=300, opposite_area_limit=300):
     """
     Initially clears the canvas of all drawings/objects and generates new
     rectangles to be drawn. An initial rectangle is drawn that encompasses the
@@ -74,12 +75,12 @@ def draw():
     initial_rectangle = Rectangle((2, 2), (1199, 599))
     rectangles.append(initial_rectangle)
     rec = canvas.create_rectangle(2, 2, 1199, 599)
-    create_sub_rectangle(initial_rectangle, rectangles)
-    print (rectangles)
+    create_sub_rectangle(initial_rectangle, rectangles, area_limit=area_limit)
+
     for rectangle in rectangles:
-        if rectangle.calculate_area() > 25000 and rectangle.is_opposite:
+        if rectangle.calculate_area() > opposite_area_limit and rectangle.is_opposite:
             rectangles.remove(rectangle)
-            create_sub_rectangle(rectangle, rectangles)
+            create_sub_rectangle(rectangle, rectangles, area_limit=area_limit)
 
 
 def save():
@@ -98,6 +99,38 @@ def save():
     label['text'] = 'ssim_color:  ' + str(average_color) + '\n' + \
                     'ssim_gray:  ' + str(average_gray)
 
+    return average_color, average_gray
+
+
+def highest_ssim():
+    """
+    Simulation that runs through multiple levels of threshholds for area
+    limits. After each one is drawn and saved, the average is recorded.
+    At the end of the simulation the highest average for both color and
+    grayscale are displayed as well as their corresponding threshholds.
+    """
+    highest_avg_color = (0, (0, 0))
+    highest_avg_gray = (0, (0, 0))
+
+    for x in range(1000, 200000, 10000):
+        for y in range(1000, 200000, 10000):
+            print(f"Highest color: {highest_avg_color}, Highest gray: {highest_avg_gray}")
+            iterations = 0
+            while iterations < 3:
+                draw(x, y)
+                average_color, average_gray = save()
+
+                if highest_avg_color[0] < average_color:
+                    highest_avg_color = (average_color, (x, y))
+                if highest_avg_gray[0] < average_gray:
+                    highest_avg_gray = (average_gray, (x, y))
+
+                iterations += 1
+
+    print(f"Simulation completed with \
+            Highest color: {highest_avg_color}, Highest gray: {highest_avg_gray}")
+
+
 if __name__ == '__main__':
     rectangles = []
     main_window = tkinter.Tk()
@@ -109,6 +142,8 @@ if __name__ == '__main__':
     canvas.configure(background='white')
     draw_button = tkinter.Button(main_window, text="Draw!", command=draw)
     save_button = tkinter.Button(main_window, text="Save", command=save)
+    simulation_button = tkinter.Button(main_window, text="Run Sim", command=highest_ssim)
+    simulation_button.pack()
     draw_button.pack()
     save_button.pack()
     canvas.pack()
